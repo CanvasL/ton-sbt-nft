@@ -4,6 +4,7 @@
   "scripts": {
     "start": "blueprint run",
     "build": "blueprint build",
+    "server": "ts-node ./src/app.ts",
     "test": "jest --verbose"
   },
   "devDependencies": {
@@ -21,5 +22,9 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.19.2"
   }
 }

@@ -11,8 +11,6 @@ export async function run(provider: NetworkProvider) {
     .storeStringRefTail(string_first)
     .endCell();
 
-  // ===== Parameters =====
-  // Replace owner with your address (if you use deeplink)
   let owner = provider.sender().address!;
 
   let collection = provider.open(
@@ -22,19 +20,6 @@ export async function run(provider: NetworkProvider) {
       denominator: 1000n,
       destination: owner,
     })
-  );
-
-  // Do deploy
-  await collection.send(
-    provider.sender(),
-    { value: toNano("0.1") },
-    {
-      $$type: "RequestMint",
-      index: 2n,
-      owner_address: provider.sender().address!,
-      authority_address: provider.sender().address!,
-      content: beginCell().endCell(),
-    }
   );
 
   console.log(collection.address);
