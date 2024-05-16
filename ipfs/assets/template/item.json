@@ -1,0 +1,7 @@
+{
+  "name": "TON SBT #item_index",
+  "description": "The unique item of whole collection.",
+  "image": "item_image",
+  "content_url": "https://docs.ton.org/",
+  "attributes": []
+}
