@@ -2,10 +2,12 @@ import { generateAndUploadMetadata, generateAndUploadSvg } from "./utils/generat
 
 const airdropList = {
   addresses: [
+    "CanvasL",
+    "CanvasL",
     "UQC3s8xc9Wa71-fePPKoq2rhfHCO4CtKuSaevO-mT9_ZLt-Q",
-    "EQARULUYsmJq1RiZ-YiH-IJLcAZUVkVff-KBPwEmmaQGH6aC",
+    "EQARULUYsmJq1RiZ-YiH-IJLcAZUVkVff-KBPwEmmaQGH6aC"
   ],
-  indexes: [1, 2],
+  indexes: [0, 1, 2, 3],
 };
 
 const main = async () => {

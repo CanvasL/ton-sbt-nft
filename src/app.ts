@@ -1,5 +1,6 @@
 import axios from "axios";
 import express, { NextFunction, Request, Response } from "express";
+import { Address } from "@ton/ton";
 
 const port = 8932;
 const app = express();
@@ -21,7 +22,7 @@ app.get(
     const index = req.params.index;
 
     const result = await axios.get(
-      "https://testnet.toncenter.com/api/v3/nft/items",
+      "https://toncenter.com/api/v3/nft/items",
       {
         params: {
           collection_address,
@@ -33,7 +34,8 @@ app.get(
     );
 
     if (result.data && result.data["nft_items"].length > 0) {
-      const owner = result.data["nft_items"][0].owner_address;
+      const rawOwnerAddress = result.data["nft_items"][0].owner_address;
+      const owner = Address.parse(rawOwnerAddress).toString();
       res.json({
         status: "success",
         data: {

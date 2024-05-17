@@ -1,15 +1,16 @@
 import { Address, beginCell, toNano } from "@ton/core";
 import { NetworkProvider } from "@ton/blueprint";
 import { SbtCollection } from "../wrappers/SbtCollection";
+import addresses from "../deployment/mainnet.json";
 
 export async function run(provider: NetworkProvider) {
   const collectionAddr = Address.parse(
-    "EQBa9wdY7ykmBXT_stkHBPsv_SP_tgLysJxYoERc_4vpOqbL"
+    addresses.collection
   );
 
   const collection = provider.open(SbtCollection.fromAddress(collectionAddr));
 
-  const result = await collection.send(
+  await collection.send(
     provider.sender(),
     { value: toNano("0.1") },
     {
