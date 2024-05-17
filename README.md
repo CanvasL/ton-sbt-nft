@@ -1,26 +1,27 @@
-# simple-counter
+# ton-sbt-nft
 
 ## Project structure
 
--   `contracts` - source code of all the smart contracts of the project and their dependencies.
--   `wrappers` - wrapper classes (implementing `Contract` from ton-core) for the contracts, including any [de]serialization primitives and compilation functions.
--   `tests` - tests for the contracts.
--   `scripts` - scripts used by the project, mainly the deployment scripts.
+- `contracts` - source code of all the smart contracts of the project and their dependencies.
+- `deployment` - deployed contract addresses.
+- `wrappers` - wrapper classes (implementing `Contract` from ton-core) for the contracts, including any [de]serialization primitives and compilation functions.
+- `scripts` - scripts used by the project, mainly the deployment scripts.
+- `src` - express restful api backend.
 
 ## How to use
 
 ### Build
 
-`npx blueprint build` or `yarn blueprint build`
-
-### Test
-
-`npx blueprint test` or `yarn blueprint test`
+`bun run build`
 
 ### Deploy or run another script
 
-`npx blueprint run` or `yarn blueprint run`
+`bun run start`
 
-### Add a new contract
+### Generate SVG image/metadata json and upload to ipfs
 
-`npx blueprint create ContractName` or `yarn blueprint create ContractName`
+`bun run upload`
+
+### Start REST API server
+
+`bun run server`

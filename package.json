@@ -1,10 +1,11 @@
 {
-  "name": "simple-counter",
+  "name": "ton-sbt-nft",
   "version": "0.0.1",
   "scripts": {
     "start": "blueprint run",
     "build": "blueprint build",
     "server": "ts-node ./src/app.ts",
+    "upload": "ts-node ./ipfs/main.ts",
     "test": "jest --verbose"
   },
   "devDependencies": {
